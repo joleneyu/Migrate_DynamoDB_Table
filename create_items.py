@@ -34,7 +34,7 @@ def put_item(id, created, dynamodb=None):
 # timestamp = random.randrange(1571626141, 1634792207)
 
 if __name__ == '__main__':
-    for x in range(10):
+    for x in range(20):
         id = str(uuid.uuid4())
         timestamp = random.randrange(1571626141, 1634792207)
         body = put_item(id, timestamp)
