@@ -11,7 +11,6 @@ def update_items(test, dynamodb=None):
     for item in allItems:
         id = item['id']
         created = item['created']
-        # print(id, created)
         key = test
         value = item.get(key)
         if key in item:
