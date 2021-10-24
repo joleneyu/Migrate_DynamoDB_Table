@@ -13,8 +13,25 @@ def update_items(test, dynamodb=None):
         created = item['created']
         # print(id, created)
         key = test
+        value = item.get(key)
         if key in item:
-            print("test attribute exists")
+            if value != 1:
+                response = table.update_item(
+
+                    Key={
+                        'id': id,
+                        'created': created
+                    },
+                    UpdateExpression="set test=:t",
+                    ExpressionAttributeValues={
+                        ':t': 1,
+                    },
+                    ReturnValues="ALL_NEW"
+                )
+                print(response)
+                updateItems.append(response)
+            else:
+                print("test value exist")
         else:
             response = table.update_item(
                 Key={
@@ -27,9 +44,12 @@ def update_items(test, dynamodb=None):
                 },
                 ReturnValues="ALL_NEW"
             )
+            print(response)
             updateItems.append(response)
+            print(updateItems)
+    return updateItems
 
 if __name__ == '__main__':
-    update_items('test')
+    update_response = update_items('test')
     print("Update all items succeeded:")
-    # pprint(update_response, sort_dicts=False)
+    pprint(update_response, sort_dicts=False)

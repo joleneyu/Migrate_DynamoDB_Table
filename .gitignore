@@ -1,2 +1,4 @@
 boto3
 __pycache__
+results.csv
+.DS_Store

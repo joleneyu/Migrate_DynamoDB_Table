@@ -19,25 +19,22 @@ Resources:
           AttributeName: "created"
           KeyType: "RANGE"
       BillingMode: PAY_PER_REQUEST
-  # newTable: 
-  #   Type: AWS::DynamoDB::Table
-  #   Properties: 
-  #     TableName: "stuff-new"
-  #     AttributeDefinitions: 
-  #       - 
-  #         AttributeName: "id"
-  #         AttributeType: "S"
-  #       - 
-  #         AttributeName: "created"
-  #         AttributeType: "N"
-  #       - 
-  #         AttributeName: "test"
-  #         AttributeType: "N"
-  #     KeySchema: 
-  #       - 
-  #         AttributeName: "id"
-  #         KeyType: "HASH"
-  #       - 
-  #         AttributeName: "created"
-  #         KeyType: "RANGE"
-  #     BillingMode: PAY_PER_REQUEST
+  newTable: 
+    Type: AWS::DynamoDB::Table
+    Properties: 
+      TableName: "stuff-new"
+      AttributeDefinitions: 
+        - 
+          AttributeName: "id"
+          AttributeType: "S"
+        - 
+          AttributeName: "created"
+          AttributeType: "N"
+      KeySchema: 
+        - 
+          AttributeName: "id"
+          KeyType: "HASH"
+        - 
+          AttributeName: "created"
+          KeyType: "RANGE"
+      BillingMode: PAY_PER_REQUEST
